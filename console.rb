@@ -6,7 +6,6 @@ require('pry-byebug')
 Album.delete_all()
 Artist.delete_all()
 
-
 artist1 = Artist.new(
   {"name" => "Pink Floyd"}
 )

@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS albums; --always drop the many one first
 DROP TABLE IF EXISTS artists;
 
+
 CREATE TABLE artists( --create the one first in one to many relationship
   id SERIAL PRIMARY KEY,
   name VARCHAR(255)
