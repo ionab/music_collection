@@ -9,7 +9,7 @@ class Album
   def initialize(options)
     @id = options["id"].to_i()
     @title = options['title']
-    @genre = options['genre'].to_i()
+    @genre = options['genre']
     @artist_id = options["artist_id"].to_i()
   end
 
@@ -44,9 +44,9 @@ class Album
   end
 
   def artist()
-    sql ="SELECT * from artist WHERE id = $1;"
+    sql ="SELECT * from artists WHERE id = $1;"
     values = [@artist_id]
-    result = SqlRunner(sql, values)
+    result = SqlRunner.run(sql, values)
     artist_hash = result[0]
     return Artist.new(artist_hash)
   end
